@@ -1,24 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import SignInPage from "./components/SignInPage";
-import SignUpPage from "./components/SignUpPage";
-// import AboutUsPage from "./components/AboutUsPage";
-// import ServicesPage from "./components/ServicesPage";
-// import FaqPage from "./components/FaqPage";
-// import TestimonialPage from "./components/TestimonialPage";
+import SignInPage from "./components/pages/SignInPage";
+import SignUpPage from "./components/pages/SignUpPage";
+import LandingPage from "./components/pages/LandingPage";
+import HomePage from "./components/pages/HomePage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
-        {/* <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/faqs" element={<FaqPage />} />
-        <Route path="/testimonials" element={<TestimonialPage />} /> */}
+        <Route path="/homepage/*" element={<HomePage />} />
       </Routes>
     </Router>
   );
